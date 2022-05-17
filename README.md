@@ -1,5 +1,5 @@
 # Upskill2022
-**This is a personal playgroud where I discover knowledge gaps and level up!**
+**This is a personal playground where I discover knowledge gaps and level up!**
 
 Because for about 9 years I have learnt plenty while shipping products with teams using various languages and framwrorks including; Angular, React, Drupal CMS, WordPress, CoreMedia and sometimes basic HTML5, CSS3, JavaScript(ES 5,6). Learning while working on projects is how I _survived_ ... yes, _survived_, even though from their own feedback I am assured that clients, colleageus and bosses loved my work ethic. 
 
