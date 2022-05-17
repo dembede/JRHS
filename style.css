@@ -1,0 +1,22 @@
+* {
+  font-family: 'Sofia Pro', sans-serif;
+  font-size: 14px;
+}
+
+body {
+  color: black;
+  background-color: linen;
+}
+
+h1 {
+  font-size: 3rem
+}
+
+h2 {
+  font-size: 2.5rem
+}
+
+a {
+  color: darkgoldenrod;
+  font-weight: bolder;
+}
