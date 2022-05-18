@@ -1,22 +1,72 @@
 * {
-  font-family: 'Sofia Pro', sans-serif;
+  font-family: "Sofia Pro", sans-serif;
   font-size: 14px;
 }
 
 body {
   color: black;
   background-color: linen;
+  padding: 2.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-bottom: 0.2rem;
 }
 
 h1 {
-  font-size: 3rem
+  font-size: 3rem;
 }
 
 h2 {
-  font-size: 2.5rem
+  font-size: 2.5rem;
 }
-
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1.5rem;
+  color: saddlebrown;
+}
+h5 {
+  font-size: 1.2rem;
+}
+p {
+  line-height: 1.4em;
+}
 a {
   color: darkgoldenrod;
+  font-weight: 500;
+}
+code {
+  font-family: "Dank Mono", monospace;
   font-weight: bolder;
+  color: brown;
+}
+p.speech::first-letter {
+  font-size: 2rem;
+  font-family: cursive;
+}
+@namespace example url(http://127.0.0.1:5500/index.html);
+example|h5 {
+  color: blue;
+}
+
+/** Dark Mode */
+body.darkmode {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: linen;
+}
+body.darkmode h4 {
+  color: burlywood;
+}
+body.darkmode a {
+  color: khaki;
+}
+body.darkmode code {
+  color: aquamarine;
 }
