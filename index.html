@@ -1,18 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MDN - CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MDN - CSS</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <body class="darkmode">
+    <h1>CSS: Cascading Style Sheets</h1>
+    <p>
+      Link
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+        target="_blank"
+        title="MDN - CSS"
+        >https://developer.mozilla.org/en-US/docs/Web/CSS</a
+      >
+    </p>
 
-<body>
-  <h1>CSS: Cascading Style Sheets</h1>
-  <p>Link <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"
-      title="MDN - CSS">https://developer.mozilla.org/en-US/docs/Web/CSS</a></p>
-</body>
+    <h3>Additional Notes</h3>
+    <p>
+      Commits on the other mac didn't push, for some weird reason so hence the
+      additional notes ... because time must not be wasted.
+    </p>
+    <h4>Attribute selectors</h4>
+    <p>
+      <b
+        >From:
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors"
+          title="Selectors - MDN"
+          target="_blank"
+          >https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors</a
+        ></b
+      >
+    </p>
+    <p>
+      CSS attribute selectors such as <code>a[title] {}</code>
+      <i>(selecting all links with titles)</i> can also be so specific to allow
+      <code>a[href="https://example.com"] { }</code>
+    </p>
+    <h4>Pseudo-classes and pseudo-elements</h4>
+    <p class="speech">
+      There's the common pseudo-classes <code>a:hover { }</code> which style
+      different states of an element. But there's the pseudo-elements
+      <code>p::first-line { }</code> or <code>p::first-letter</code> which
+      select a part of the element
+      <i>instead of the entire element itself.</i>
+    </p>
+    <h4>Combinators</h4>
+    <p>
+      Used to target specific elements within the document, for instance
+      <code>p > span { }</code> targets <code>spans</code> within a paragraph
+    </p>
+    <hr />
+    <p>
+      Here's
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors"
+        title="Complete list of Selectors"
+        target="_blank"
+        >Complete list of Selectors</a
+      >
+    </p>
+    <br /><br />
+    . <br />
+    . <br />
+    . <br />
+    <h3>CSS Selectors</h3>
+    <p>CSS selectors define the elements to which a set of CSS rules apply.</p>
 
+    <h5>Universal selectors</h5>
+    <p>
+      Selects all elements, but can be restricted to specific namespaces e.g.
+    </p>
+    <ul>
+      <li><code>ns|*</code> matches all elements in the "ns" namespace.</li>
+      <li>
+        <code>&nbsp;|*</code> matches elements without a defined namespace
+      </li>
+      <li><code>*|*</code> matches all elements</li>
+    </ul>
+    <p>
+      <b>Note on syntax:</b> for simple selectors <code>*.darkmode</code> and
+      <code>.darkmode</code> is really the same thing
+    </p>
+  </body>
 </html>
