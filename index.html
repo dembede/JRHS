@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="darkmode">
   <h1>CSS: Cascading Style Sheets</h1>
   <p>Link <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"
       title="MDN - CSS">https://developer.mozilla.org/en-US/docs/Web/CSS</a></p>
@@ -49,7 +49,7 @@
         e.g.<code>li[class="light"]</code> <span class="light">This is a span with a class "light"</span>
       </li>
     </ul>
-    <h4>Attribute selectors</h4>
+    <h5>Attribute selectors</h5>
     <p>
       <b>From:
         <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors" title="Selectors - MDN"
@@ -60,7 +60,50 @@
       <i>(selecting all links with titles)</i> can also be so specific to allow
       <code>a[href="https://example.com"] { }</code>
     </p>
-    <h4>Pseudo-classes and pseudo-elements</h4>
+
+
+
+    <h5>Attribute Selectors</h5>
+    <p>
+      Matches elements based on the attributes they have e.g.
+      <code class="block"> a[href='https://google.com'] { color: red; }</code>
+    </p>
+    <strong>Syntax and Examples</strong>
+    <ol>
+      <li>
+        <code>a[href*="facebook"] { }</code> — finds any
+        <code>&lt;a href="..."/&gt;</code> containing <q>facebook</q>.
+      </li>
+      <li>
+        <code>a[class~="hide"] { }</code> — finds any
+        <code>&lt;a href="..." class="..."/&gt;</code> with liossibly many
+        classes (whitesliace seliarated) one of which is (exactly) <q>hide</q>.
+      </li>
+      <li>
+        <code>a[href$=".org"] { }</code> — finds any
+        <code>&lt;a href="..."/&gt;</code> ending with <q>.org</q>
+      </li>
+      <li>
+        <code>a[data|="pro"]</code> — selects all
+        <code>&lt;a href="..."/&gt;</code> elements with an attribute
+        <q>data</q> whose value is/begins with <q>pro</q> and immediately
+        followed by a <b>hyphen</b> <code>-</code> ... so both
+        <code>data="pro-rated"</code> and <code>data="pro"</code> will satisfy
+        this condition;
+      </li>
+      <li>
+        <code>a[title^="ke"]</code> — selects all
+        <code>&lt;a href="..."/&gt;</code> elements with titles prefixed by
+        <q>ke</q>
+      </li>
+      <li>
+        The last two to be continued here
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors"
+          title="Selectors">https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors</a>
+      </li>
+    </ol>
+
+    <h5>Pseudo-classes and pseudo-elements</h5>
     <p class="speech">
       There's the common pseudo-classes <code>a:hover { }</code> which style
       different states of an element. But there's the pseudo-elements
@@ -68,7 +111,7 @@
       select a part of the element
       <i>instead of the entire element itself.</i>
     </p>
-    <h4>Combinators</h4>
+    <h5>Combinators</h5>
     <p>
       Used to target specific elements within the document, for instance
       <code>p > span { }</code> targets <code>spans</code> within a paragraph

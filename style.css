@@ -1,5 +1,5 @@
 * {
-  font-family: 'Prompt', 'Sofia Pro', sans-serif;
+  font-family: "Sofia Pro", sans-serif;
   font-size: 14px;
 }
 
@@ -7,7 +7,7 @@ body {
   color: black;
   background-color: linen;
   padding: 2.2rem;
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -37,7 +37,11 @@ h4 {
 }
 
 h5 {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
+  color: tomato;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-weight: 400;
 }
 
 p {
@@ -51,12 +55,16 @@ a {
 
 code {
   font-family: "Dank Mono", monospace;
-  font-weight: bolder;
   color: brown;
 }
 
-*[class="light"] {
-  color: gray;
+code.block {
+  display: block;
+  margin: 1rem 0;
+}
+
+.caption {
+  font-style: italic;
 }
 
 p.speech::first-letter {
@@ -64,10 +72,23 @@ p.speech::first-letter {
   font-family: cursive;
 }
 
+/* do this to any Heading 4 that comes after a paragraph */
+p+h4 {
+  border-top: 1px dashed;
+  padding-top: 1rem;
+}
+
 @namespace example url(http://127.0.0.1:5500/index.html);
 
 example|h5 {
   color: blue;
+}
+
+/*SELECTORS*/
+
+/*Lists*/
+li {
+  margin: 1rem 0;
 }
 
 /** Dark Mode */
