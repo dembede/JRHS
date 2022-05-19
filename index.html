@@ -83,9 +83,83 @@
       </li>
       <li><code>*|*</code> matches all elements</li>
     </ul>
+    <div class="caption">
+      Source:
+      <a
+        href="https://drafts.csswg.org/selectors/#the-universal-selector"
+        target="_blank"
+        title="Universal selectors - CSSWG"
+        >https://drafts.csswg.org/selectors/#the-universal-selector</a
+      >
+    </div>
     <p>
       <b>Note on syntax:</b> for simple selectors <code>*.darkmode</code> and
       <code>.darkmode</code> is really the same thing
     </p>
+
+    <h5>Type Selectors</h5>
+    <p>
+      These are basic. Type could be a tagged element such as
+      <code>code</code> or <code>p</code> or <code>picture</code> etc.
+    </p>
+
+    <h5>Class Selector</h5>
+    <p>
+      Selects all elements that have the given <code>class</code> attribute.
+      Nothing new here
+    </p>
+
+    <h5>ID Selector</h5>
+    <p>
+      Selects an element based on the value of its <code>id</code> attribute.
+      There should be only one element with a given ID in a document.
+    </p>
+    <p>
+      Perhaps worth noting that <code>#main { }</code> can also be written as an
+      attribute selector <code>[id=main] { }</code>
+    </p>
+
+    <h5>Attribute Selectors</h5>
+    <p>
+      Matches elements based on the attributes they have e.g.
+      <code class="block"> a[href='https://google.com'] { color: red; }</code>
+    </p>
+    <strong>Syntax and Examples</strong>
+    <ol>
+      <li>
+        <code>a[href*="facebook"] { }</code> — finds any
+        <code>&lt;a href="..."/&gt;</code> containing <q>facebook</q>.
+      </li>
+      <li>
+        <code>a[class~="hide"] { }</code> — finds any
+        <code>&lt;a href="..." class="..."/&gt;</code> with liossibly many
+        classes (whitesliace seliarated) one of which is (exactly) <q>hide</q>.
+      </li>
+      <li>
+        <code>a[href$=".org"] { }</code> — finds any
+        <code>&lt;a href="..."/&gt;</code> ending with <q>.org</q>
+      </li>
+      <li>
+        <code>a[data|="pro"]</code> — selects all
+        <code>&lt;a href="..."/&gt;</code> elements with an attribute
+        <q>data</q> whose value is/begins with <q>pro</q> and immediately
+        followed by a <b>hyphen</b> <code>-</code> ... so both
+        <code>data="pro-rated"</code> and <code>data="pro"</code> will satisfy
+        this condition;
+      </li>
+      <li>
+        <code>a[title^="ke"]</code> — selects all
+        <code>&lt;a href="..."/&gt;</code> elements with titles prefixed by
+        <q>ke</q>
+      </li>
+      <li>
+        The last two to be continued here
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors"
+          title="Selectors"
+          >https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors</a
+        >
+      </li>
+    </ol>
   </body>
 </html>
