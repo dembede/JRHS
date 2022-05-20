@@ -1,14 +1,15 @@
-* {
-  font-family: "Sofia Pro", sans-serif;
-  font-size: 14px;
+HTML {
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  background-color: linen;
 }
 
 body {
   color: black;
-  background-color: linen;
   padding: 2.2rem;
   max-width: 600px;
   margin: 0 auto;
+  font-size: 1rem;
 }
 
 h1,
@@ -16,6 +17,7 @@ h2,
 h3,
 h4,
 h5 {
+  font-family: "Optima", sans-serif;
   margin-bottom: 0.2rem;
 }
 
@@ -37,11 +39,10 @@ h4 {
 }
 
 h5 {
-  font-size: 0.8rem;
-  color: tomato;
+  font-size: 1rem;
+  color: orangered;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
-  font-weight: 400;
 }
 
 p {
@@ -51,7 +52,10 @@ p {
 a {
   color: darkgoldenrod;
   font-weight: 500;
+  text-decoration: none;
 }
+
+
 
 code {
   font-family: "Dank Mono", monospace;
@@ -67,9 +71,21 @@ code.block {
   font-style: italic;
 }
 
+/*SELECTORS*/
+a[class~="red"],
+a[title^="r"][title$="d"] {
+  color: red;
+}
+
+a:not([class~="anchor"]) {
+  font-weight: bolder;
+
+  border-bottom: 2px solid;
+}
+
 p.speech::first-letter {
   font-size: 2rem;
-  font-family: cursive;
+  font-family: "Party LET", cursive;
 }
 
 /* do this to any Heading 4 that comes after a paragraph */
@@ -84,9 +100,14 @@ example|h5 {
   color: blue;
 }
 
-/*SELECTORS*/
+/*END SELECTORS*/
+
 
 /*Lists*/
+ol {
+  list-style-type: decimal-leading-zero;
+}
+
 li {
   margin: 1rem 0;
 }
@@ -95,6 +116,10 @@ li {
 body.darkmode {
   background-color: rgba(0, 0, 0, 0.9);
   color: linen;
+}
+
+body.darkmode h5 {
+  color: tomato;
 }
 
 body.darkmode h4 {

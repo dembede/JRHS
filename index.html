@@ -9,10 +9,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="darkmode">
+<body class="darkmode_">
   <h1>CSS: Cascading Style Sheets</h1>
-  <p>Link <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"
-      title="MDN - CSS">https://developer.mozilla.org/en-US/docs/Web/CSS</a></p>
+  <p>Always start here <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"
+      title="Whenever you're lost, start here">https://developer.mozilla.org/en-US/docs/Web/CSS</a> <br> or here <a
+      href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks" target="_blank"
+      title="CSS building blocks">https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks</a></p>
   <section>
     <h2>CSS Selectors</h2>
     <p>CSS selectors define the elements to which a set of CSS rules apply.</p>
@@ -60,10 +62,6 @@
       <i>(selecting all links with titles)</i> can also be so specific to allow
       <code>a[href="https://example.com"] { }</code>
     </p>
-
-
-
-    <h5>Attribute Selectors</h5>
     <p>
       Matches elements based on the attributes they have e.g.
       <code class="block"> a[href='https://google.com'] { color: red; }</code>
@@ -71,23 +69,19 @@
     <strong>Syntax and Examples</strong>
     <ol>
       <li>
-        <code>a[href*="facebook"] { }</code> — finds any
-        <code>&lt;a href="..."/&gt;</code> containing <q>facebook</q>.
+        <code>a[href*="facebook"] { }</code> — links containing <q>facebook</q>.
       </li>
       <li>
-        <code>a[class~="hide"] { }</code> — finds any
-        <code>&lt;a href="..." class="..."/&gt;</code> with liossibly many
+        <code>a[class~="hide"] { }</code> — links with possibly many
         classes (whitesliace seliarated) one of which is (exactly) <q>hide</q>.
       </li>
       <li>
-        <code>a[href$=".org"] { }</code> — finds any
-        <code>&lt;a href="..."/&gt;</code> ending with <q>.org</q>
+        <code>a[href$=".org"] { }</code> — links ending with <q>.org</q>
       </li>
       <li>
-        <code>a[data|="pro"]</code> — selects all
-        <code>&lt;a href="..."/&gt;</code> elements with an attribute
-        <q>data</q> whose value is/begins with <q>pro</q> and immediately
-        followed by a <b>hyphen</b> <code>-</code> ... so both
+        <code>a[data|="pro"]</code> — links a <q>data</q> attribute
+        whose value is <q>pro</q>, or begins with <q>pro</q> and immediately
+        followed by a <b>hyphen</b> <q><code>-</code></q> ... meaning both
         <code>data="pro-rated"</code> and <code>data="pro"</code> will satisfy
         this condition;
       </li>
@@ -97,11 +91,32 @@
         <q>ke</q>
       </li>
       <li>
-        The last two to be continued here
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors"
-          title="Selectors">https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors</a>
+        <code>a[title^="ke" i] { }</code> — adding the <code>i</code> makes the selector case <b>insensitive</b> but
+        adding an <code>s</code> makes it case <b>sensitive</b>.
       </li>
     </ol>
+    <strong>Examples</strong>
+    <ul>
+      <li>
+        <a href="#" class="anchor" title="product red">This red link</a> is red because has a title that starts with
+        <q>r</q> and ends
+        with
+        <q>d</q>, and this is the css that makes it behave this way: <code class="block">
+              a[title^="r"][title$="d"] { }
+            </code>
+      </li>
+      <li>
+        <a href="#" title="red" class="anchor product red blue">(PRODUCT) RED</a> is red because one of its classes is
+        <q>red</q> and this is the css that makes it behave this way: <code class="block">
+              a[class~="red"] { }
+            </code>
+      </li>
+      <li>
+        Negation is also possible like this <code class="block">
+          a:not[class='green'] { }
+        </code>
+      </li>
+    </ul>
 
     <h5>Pseudo-classes and pseudo-elements</h5>
     <p class="speech">
