@@ -10,6 +10,7 @@ body {
   max-width: 600px;
   margin: 0 auto;
 }
+
 h1,
 h2,
 h3,
@@ -25,33 +26,42 @@ h1 {
 h2 {
   font-size: 2.5rem;
 }
+
 h3 {
   font-size: 2rem;
 }
+
 h4 {
   font-size: 1.5rem;
   color: saddlebrown;
 }
+
 h5 {
   font-size: 1.2rem;
 }
+
 p {
   line-height: 1.4em;
 }
+
 a {
   color: darkgoldenrod;
   font-weight: 500;
 }
+
 code {
   font-family: "Dank Mono", monospace;
   font-weight: bolder;
   color: brown;
 }
+
 p.speech::first-letter {
   font-size: 2rem;
   font-family: cursive;
 }
+
 @namespace example url(http://127.0.0.1:5500/index.html);
+
 example|h5 {
   color: blue;
 }
@@ -61,12 +71,20 @@ body.darkmode {
   background-color: rgba(0, 0, 0, 0.9);
   color: linen;
 }
+
 body.darkmode h4 {
   color: burlywood;
 }
+
 body.darkmode a {
   color: khaki;
 }
+
 body.darkmode code {
   color: aquamarine;
+}
+
+a svg {
+  width: 20px;
+  height: auto;
 }
