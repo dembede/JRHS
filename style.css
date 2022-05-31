@@ -6,17 +6,29 @@ HTML {
 
 body {
   color: black;
-  padding: 2.2rem;
-  max-width: 600px;
+  padding: 28px;
   margin: 0 auto;
   font-size: 1rem;
+  min-height: calc(100vh - 56px);
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  list-style: none;
+  display: inline-flex;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
 }
 
 h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6,
+button {
   font-family: "Optima", sans-serif;
   margin-bottom: 0.2rem;
 }
@@ -45,20 +57,40 @@ h5 {
   text-transform: uppercase;
 }
 
+h6 {
+  font-size: 1.2rem;
+}
+
 p {
   line-height: 1.4em;
 }
 
 a {
   color: darkgoldenrod;
-  font-weight: 500;
+  font-weight: 400;
   text-decoration: none;
 }
 
+nav a {
+  font-weight: bolder;
+  margin: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  color: black;
+  border: 1px solid;
+}
 
+nav a:hover {
+  color: seagreen;
+}
+
+nav a.active {
+  text-decoration: line-through;
+  border: none !important;
+  opacity: 0.5;
+}
 
 code {
-  font-family: "Dank Mono", monospace;
+  font-family: "Monaco", "Dank Mono", monospace;
   color: brown;
 }
 
@@ -74,13 +106,15 @@ code.block {
 /*SELECTORS*/
 a[class~="red"],
 a[title^="r"][title$="d"] {
-  color: red;
+  color: dimgrey;
 }
 
 a:not([class~="anchor"]) {
-  font-weight: bolder;
-
   border-bottom: 2px solid;
+}
+
+a[class~="anchor"] {
+  font-weight: bolder;
 }
 
 p.speech::first-letter {
@@ -94,14 +128,57 @@ p+h4 {
   padding-top: 1rem;
 }
 
-@namespace example url(http://127.0.0.1:5500/index.html);
+@namespace example url(http://127.0.0.1);
 
-example|h5 {
+example|p {
   color: blue;
+}
+
+.pseudo-spec li {
+  content: counter(chapter_counter);
+  /* content: counter(chapter_counter, upper-roman);
+    content: counters(section_counter, ".");
+    content: counters(section_counter, ".", decimal-leading-zero); */
 }
 
 /*END SELECTORS*/
 
+
+
+/* RELATIVE UNITS */
+.button-container {
+  border-radius: 5rem;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.button-container button {
+  border: none;
+  background-color: tomato;
+  color: whitesmoke;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  opacity: 0.8
+}
+
+button.em {
+  padding: 1em;
+  border-radius: 1em;
+  margin: 3em;
+}
+
+button.rem {
+  padding: 1em;
+  border-radius: 1rem;
+  margin: 3rem;
+}
+
+/* END -RELATIVE UNITS */
 
 /*Lists*/
 ol {
@@ -111,6 +188,9 @@ ol {
 li {
   margin: 1rem 0;
 }
+
+
+
 
 /** Dark Mode */
 body.darkmode {
@@ -130,6 +210,19 @@ body.darkmode a {
   color: khaki;
 }
 
+body.darkmode a[class~="red"] {
+  color: dimgrey;
+}
+
 body.darkmode code {
   color: aquamarine;
+}
+
+body.darkmode nav a {
+  color: cornsilk;
+  border: 1px solid;
+}
+
+body.darkmode nav a:hover {
+  color: burlywood;
 }

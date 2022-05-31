@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MDN - CSS: Conflicting Rules</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="darkmode">
+  <h1>Conflicting Rules</h1>
+  <nav>
+    <ul>
+      <li><a href="/" title="home">home</a></li>
+      <li><a href="/conflictingrules.html" class="active red" title="conflicting rules">conflicting rules</a></li>
+    </ul>
+  </nav>
+  <small>Always start here <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"
+      title="Whenever you're lost, start here">https://developer.mozilla.org/en-US/docs/Web/CSS</a> <br> or here <a
+      href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks" target="_blank"
+      title="CSS building blocks">https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks</a></small>
+  <section>
+    <h3>The cascade</h3>
+    <p>The order of CSS rules matters; when two rules apply that
+      have equal specificity, the one that comes last in the CSS is the one that will be used. </p>
+  </section>
+  <h3>Specifity</h3>
+  <p>
+    The more specific the rule the higher the chances of it getting selected. Element selectors like <code>h1 { }</code>
+    are
+    less specific than class selectors <code>.main-title { }</code>
+  </p>
+  <p>There's also <b>specifity scoring</b> which will be discussed later</p>
+  <h3>Inheritance</h3>
+  <p>Elements under <code>body { color: blue; }</code> like a <code>span</code> will inherit properties of the
+    <code>body</code> element unless specific styling is applied to the span e.g. <code>span { color: black; }</code>
+  </p>
+  <p>Some rules will not be inherited e.g. <code>width</code> ... otherwise CSS would be very cumbersome to use.</p>
+  <h5>Controlling Inheritance</h5>
+  <p>Every css property will accept these universal attributes</p>
+
+  <h6><code>inherit</code></h6>
+  <p><q>Turns on</q> inheritance by telling the element to inherit properties of its parents (cascade layers)</p>
+
+  <h6><code>initial</code></h6>
+  <p>Set value of property to its initial value</p>
+
+  <h6><code>revert</code></h6>
+  <p>Set value of property to the default value as per browser styling, acting like <code>unset</code></p>
+
+  <h6><code>revert-layer</code></h6>
+  <p>Set value of property to the value of a previous cascade-layer </p>
+
+  <h6><code>unset</code></h6>
+  <p>Resets the property to its natural value, which means that if the property is naturally inherited it acts like
+    <code>inherit</code>, otherwise it acts like <code>initial</code>.
+  </p>
+</body>
+
+</html>
