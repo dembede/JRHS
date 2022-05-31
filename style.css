@@ -88,3 +88,15 @@ a svg {
   width: 20px;
   height: auto;
 }
+
+.game {
+  padding: 2em;
+  border: solid 1px rosybrown;
+  margin: 2rem 0;
+  border-radius: 1em;
+}
+
+.game .lastResult {
+  color: white;
+  padding: 3px;
+}
