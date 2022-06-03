@@ -16,7 +16,7 @@ h2,
 h3,
 h4,
 h5 {
-  margin-bottom: 0.2rem;
+  margin-bottom: 1rem;
 }
 
 h1 {
@@ -40,7 +40,8 @@ h5 {
   font-size: 1.2rem;
 }
 
-p {
+p,
+blockquote {
   line-height: 1.4em;
 }
 
@@ -69,6 +70,7 @@ example|h5 {
 /** Dark Mode */
 body.darkmode {
   background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgb(22, 6, 23);
   color: linen;
 }
 
