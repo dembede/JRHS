@@ -121,6 +121,22 @@ p.speech::first-letter {
   font-size: 2rem;
   font-family: "Party LET", cursive;
 }
+li > code {
+  /* this is a control for the below experiments*/
+  /* all: unset;  */
+}
+ul > li > code {
+  /*takes parent element styling */
+  /* all: inherit;  */
+  /*takes initial value of code styling*/
+  all: initial; 
+  /*takes its natural value, i.e. either inherited or initial*/
+  /* all: unset; */
+  /*back to browser's default properties*/
+  /* all: revert; */
+  /*sets value of previous cascade layer*/
+  /* all: revert-layer; */
+}
 
 /* do this to any Heading 4 that comes after a paragraph */
 p+h4 {
