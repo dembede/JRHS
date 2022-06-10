@@ -56,7 +56,17 @@ function resetGame() {
   const resetParas = document.querySelectorAll('.resultParas p');
   resetParas.forEach(para => {
     para.textContent = '';
-  })
+  });
+
+  resetButton.parentNode.removeChild(resetButton);
+
+  guessField.disabled = false;
+  guessSubmit.disabled = false;
+  guessField.value = "";
+  guessField.focus();
+
+  lastResult.style.backgroundColor = 'transparent';
+  randomNumber = Math.floor(Math.random() * 100) + 1;
 }
 
 guessSubmit.addEventListener('click', checkGuess);
