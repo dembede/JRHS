@@ -78,6 +78,16 @@ const myFloat = 6.667782347852097;
 // console.log("myFloat", myFloat);
 // console.log("myFloat.toFixed(2)", myFloat.toFixed(2));
 
-let num1 = 6;
-num1--;
-console.log(num1);
+let num1 = 50 * (50 % 9);
+// num1--;
+console.log(`I have a phone.
+its color is red`);
+
+let firstName = "Sammy";
+console.log("firstName", firstName);
+
+// firstName = firstName.replace("my", "wel");
+// console.log("updated firstName", firstName);
+
+firstName = firstName.replace("m", "n");
+console.log("re-updated firstName", firstName);

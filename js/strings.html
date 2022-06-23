@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upskill: JavaScript</title>
+    <link rel="stylesheet" href="/style.css" async />
+    <script src="script.js" async></script>
+  </head>
+
+  <body class="darkmode">
+    <a href="/" title="go back">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M10 19l-7-7m0 0l7-7m-7 7h18"
+        /></svg
+    ></a>
+    <h1>upskill : JavaScript</h1>
+    <nav>
+      <ul>
+        <li><a href="/js/index.html">js home</a></li>
+        <li><a href="/js/numbers.html">numbers</a></li>
+        <li><a href="/js/strings.html">strings</a></li>
+      </ul>
+    </nav>
+
+    <h2>handling strings</h2>
+    <p>
+      Topic reference:
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Useful_string_methods"
+        >https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Useful_string_methods</a
+      >
+    </p>
+    <h4>escaping characters</h4>
+    <p>
+      <code>'I\'ve got nothing to worry about <i>some_text</i>'</code>
+    </p>
+
+    <h4>concatenating strings</h4>
+    <p>
+      Template literals use backticks <code>``</code> e.g.
+      <code>const greeting = `Niaje`</code>
+    </p>
+    <p>
+      we can also add variables to <code>greeting</code> using
+      <code>${<i>some_text</i>}</code> e.g. <br />
+      <code> greeting = `Hello ${firstName}` </code> prints out "Hello Sammy"
+    </p>
+    <p>
+      concatenating with <code>+</code> is still okay, however using template
+      literals <code>``</code> and including variables with
+      <code>${}</code> usually gives you more readable code
+    </p>
+
+    <h4>useful methods/tips</h4>
+    <p><code>Number()</code> converts anyting to a number (if it can)</p>
+    <p><code>toString()</code> every number has this method</p>
+    <p>
+      Template literals respect line breaks. e.g. <br />
+      <code>`I have a phone. {enter} its color is red.`</code>
+    </p>
+    <p>
+      Getting length of a string <code>firstName.length</code> returns a number
+    </p>
+    <p>
+      <strong>Checking if a string contains a substring</strong> <br />
+      <code>firstName.includes('<i>some_text</i>')</code> returns boolean<br />
+      <code>firstName.startsWith('<i>some_text</i>')</code> returns boolean<br />
+      <code>firstName.endsWith('<i>some_text</i>')</code> returns boolean<br />
+      <code>firstName.indexOf('<i>some_text</i>')</code> returns number. +ve
+      number if present, -ve number if absent<br />
+      <code>firstName.indexOf('<i>some_text</i>',"fromPosition")</code> searches
+      from index specified by "fromPosition". This can be useful in finding 2nd,
+      3rd... occurrences of the same string<br />
+    </p>
+    <p>
+      <strong>extracting a substring from a string</strong><br />
+      • use the <code>slice()</code> method, like this
+      <code>slice(startIndex, endIndex)</code><br />
+      • example: <code>firstName.slice(1, 4); // 'ammy'</code><br />
+      • without the <code>endIndex</code> it extracts the string to the end
+      <br />
+      <b>Other options of <code>slice()</code></b> here
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice"
+        target="_blank"
+        >https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice</a
+      ><br />
+      — <code>firstName.slice(-4); // "ammy"</code><br />
+      — <code>firstName.slice(-1,02); // ""</code> since those positions don't
+      make sense <br />
+    </p>
+    <p>
+      <b
+        >changing case is possible e.g.
+        <code>firstName.toUpperCase(); // SAMMY</code> or can use
+        <code>firstName.toLowerCase(); // sammy</code></b
+      >
+    </p>
+    <p>
+      <b>updating parts of a string is possible</b> e.g.
+      <code>firstName.replace('my','wel'); // Samwel</code> or
+      <code>firstName.replaceAll('m','n') // Samnny</code> because the former
+      only replaces the first occurence of 'm'
+    </p>
+  </body>
+</html>
