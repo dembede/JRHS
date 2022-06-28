@@ -1,7 +1,8 @@
-HTML {
-  font-family: "PT Sans", sans-serif;
-  font-size: 16px;
-  background-color: linen;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap');
+
+* {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
 }
 
 body {
@@ -12,25 +13,12 @@ body {
   min-height: calc(100vh - 56px);
 }
 
-nav ul {
-  margin: 0;
-  padding: 0;
-  text-transform: uppercase;
-  list-style: none;
-  display: inline-flex;
-  font-size: 0.8rem;
-  letter-spacing: 0.1rem;
-}
-
 h1,
 h2,
 h3,
 h4,
-h5,
-h6,
-button {
-  font-family: "Optima", sans-serif;
-  margin-bottom: 0.2rem;
+h5 {
+  margin-bottom: 1rem;
 }
 
 h1 {
@@ -51,26 +39,40 @@ h4 {
 }
 
 h5 {
-  font-size: 1rem;
-  color: orangered;
-  letter-spacing: 0.2rem;
+  font-size: 1.1rem;
+  color: chocolate
+}
+nav ul {
+  padding: 0;
+}
+nav li {
+  display: inline-block;
+  list-style: circle;
+  margin-left: 10px;
   text-transform: uppercase;
 }
 
-h6 {
-  font-size: 1.2rem;
+nav li a {
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  padding-bottom: 5px;
+  border-bottom: 1px solid;
 }
 
-p {
+p,
+blockquote {
   line-height: 1.4em;
 }
+
 a {
   color: darkgoldenrod;
   font-weight: 400;
   text-decoration: none;
 }
 
-nav a {
+code {
+  font-family: "Dank Mono", monospace;
   font-weight: bolder;
   margin: 0.5rem;
   padding: 0.2rem 0.5rem;
@@ -143,10 +145,15 @@ p+h4 {
   padding-top: 1rem;
 }
 
-@namespace example url(http://127.0.0.1);
+ul li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6rem;
+}
 
-example|p {
-  color: blue;
+/* @namespace example url(http://127.0.0.1:5500/index.html); */
+i {
+  font-weight: normal;
+  font-family: inherit;
 }
 
 .pseudo-spec li {
@@ -210,6 +217,7 @@ li {
 /** Dark Mode */
 body.darkmode {
   background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgb(22, 6, 23);
   color: linen;
 }
 
@@ -240,4 +248,20 @@ body.darkmode nav a {
 
 body.darkmode nav a:hover {
   color: burlywood;
+}
+a svg {
+  width: 20px;
+  height: auto;
+}
+
+.game {
+  padding: 2em;
+  border: solid 1px rosybrown;
+  margin: 2rem 0;
+  border-radius: 1em;
+}
+
+.game .lastResult {
+  color: white;
+  padding: 3px;
 }
