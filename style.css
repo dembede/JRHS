@@ -5,6 +5,16 @@
   font-size: 14px;
 }
 
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
   color: black;
   padding: 28px;
@@ -74,10 +84,7 @@ a {
 code {
   font-family: "Dank Mono", monospace;
   font-weight: bolder;
-  margin: 0.5rem;
-  padding: 0.2rem 0.5rem;
   color: black;
-  border: 1px solid;
 }
 
 nav a:hover {
@@ -243,7 +250,6 @@ body.darkmode code {
 
 body.darkmode nav a {
   color: cornsilk;
-  border: 1px solid;
 }
 
 body.darkmode nav a:hover {
