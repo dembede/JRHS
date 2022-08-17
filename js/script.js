@@ -11,7 +11,7 @@ const gameWrapper = document.querySelector('.game');
 let guessCount = 1;
 let resetButton;
 
-function checkGuess() {
+function checkGuess_() {
   const userGuess = Number(guessField.value);
   console.log(userGuess);
   if (guessCount === 1) {

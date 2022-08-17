@@ -1,5 +1,5 @@
 * {
-  font-family: "Sofia Pro", sans-serif;
+  font-family: "Amazon Ember CD RC", "Sofia Pro", sans-serif;
   font-size: 14px;
 }
 
@@ -59,6 +59,10 @@ code {
 p.speech::first-letter {
   font-size: 2rem;
   font-family: cursive;
+}
+
+input[type="submit"] {
+  text-transform: uppercase;
 }
 
 @namespace example url(http://127.0.0.1:5500/index.html);
