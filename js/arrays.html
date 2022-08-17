@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upskill: JavaScript</title>
+    <link rel="stylesheet" href="/style.css" async />
+    <script src="script.js" async></script>
+  </head>
+
+  <body class="darkmode">
+    <a href="/" title="go back">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M10 19l-7-7m0 0l7-7m-7 7h18"
+        /></svg
+    ></a>
+    <h1>upskill : JavaScript</h1>
+    <nav>
+      <ul>
+        <li><a href="/js/index.html">js home</a></li>
+        <li><a href="/js/numbers.html">numbers</a></li>
+        <li><a href="/js/strings.html">strings</a></li>
+        <li><a href="/js/arrays.html">arrays</a></li>
+      </ul>
+    </nav>
+
+    <h2>arrays</h2>
+    <p>
+      Topic reference:
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays"
+        >https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays</a
+      >
+    </p>
+    <h4>finding length</h4>
+    <p>
+      Here's how
+      <code
+        >const shopping = ['bread', 'milk', 'cheese', 'hummus',
+        'noodles'];</code
+      >
+      <br />
+      <code>console.log(shopping.length); </code> // 5
+    </p>
+    <h4>accessing and modifying</h4>
+    <p><code>console.log(shopping[0]);</code> // 'bread'</p>
+    <p>
+      To modify <code>shopping[2] = "eggs"</code> — this changes 'cheese' to
+      'eggs'
+    </p>
+    <p>
+      Multidimentional arrays e.g.
+      <code>shopping = [2, 4, 3, 6, 3, [6, 7]]</code>
+      can be accessed like this
+      <code>shopping[2][2]</code>
+    </p>
+    <h4>finding items in arrays</h4>
+    <p>
+      <code>shopping.indexOf('eggs');</code> // -1 means not found, anything
+      else means found in the said position
+    </p>
+    <h4>adding items to arrays</h4>
+    <p>
+      to add to the <b>begining</b> of the array use <code>unshift()</code> for
+      example: <br />
+      <code>array.unshift('new-item')</code>
+    </p>
+    <p>
+      to remove the <b>last item</b> from array use <code>pop()</code>, for
+      example <br />
+      <code>arr.pop();</code>
+    </p>
+    <p>to remove the <b>first item</b> of the array use <code>shift()</code></p>
+    <p>
+      use <code>splice()</code> if you know the index of the item to be removed.
+      e.g. <br /><code
+        >arr.splice(<i>where_to_start</i>,<i>how_many_items_to_be_removed</i>)</code
+      >
+    </p>
+
+    <h4>accessing every item</h4>
+    <p>
+      (1) use <code>for...of</code> to loop through them all. e.g. <br />
+      <code>for (const item of shopping) { console.log(item) }</code>
+    </p>
+
+    <p>
+      Use <code>map()</code> for things you'd like to do repeadedly.e.g. pinting
+      out a list of names
+    </p>
+
+    <blockquote>
+      Read more on <br />
+      —
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"
+        ><code>map()</code> function</a
+      ><br />
+      —
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of"
+        ><code>for...of</code> function</a
+      >
+    </blockquote>
+
+    <p>
+      <code>filter()</code>
+      creates new array containing only items that matched the filtering
+      criteria. For example, getting cities with long names: <br />
+
+      <code>const cities = ['London', 'Liverpool', 'Totnes', 'Edinburgh'];</code
+      ><br />
+      <code
+        >const longerThanEight = cities.filter(city => city.length > 8);</code
+      ><br />
+      // [ "Liverpool", "Edinburgh" ]
+    </p>
+
+    <h4>converting between strings and arrays</h4>
+    <p><code>split()</code> and <code>join()</code></p>
+    <p>
+      Examples for both <br /><code
+        >const data = "nairobi,nakuru,naivasha,nyahururu";</code
+      ><br />
+      <code>const towns = data.split(',');</code><br /><code
+        >console.log(towns);</code
+      >
+      // [ "nairobi", "nakuru", "naivasha", "nyahururu" ]
+      <br />
+      <code>const data2 = towns.join(',');</code><br /><code
+        >console.log(data2);</code
+      >
+      // nairobi,nakuru,naivasha,nyahururu
+      <br /><br />
+      Also, <code>toString()</code> works but is limited to using commas. <br />
+      <code>towns.toString();</code><br />// nairobi,nakuru,naivasha,nyahururu
+    </p>
+    <blockquote>
+      ------------------------------------------- <br />
+      Consider doing some tests here
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Test_your_skills:_Arrays"
+        >https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Test_your_skills:_Arrays</a
+      >
+    </blockquote>
+  </body>
+</html>

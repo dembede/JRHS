@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upskill: JavaScript</title>
+    <link rel="stylesheet" href="/style.css" async />
+    <script src="script.js" async></script>
+  </head>
+
+  <body class="darkmode">
+    <a href="/" title="go back">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M10 19l-7-7m0 0l7-7m-7 7h18"
+        /></svg
+    ></a>
+    <h1>upskill : JavaScript</h1>
+    <nav>
+      <ul>
+        <li><a href="/js/index.html">js home</a></li>
+        <li><a href="/js/numbers.html">numbers</a></li>
+        <li><a href="/js/strings.html">strings</a></li>
+      </ul>
+    </nav>
+    <h2>numbers and operators</h2>
+    <h4>types of numbers</h4>
+    <ul>
+      <li>
+        <b>Integers</b> - floating-point numbers, without a fraction. Can be +ve
+        or -ve
+      </li>
+      <li><b>Floating point numbers (floats)</b> - e.g. 12.345234</li>
+      <li>
+        <b>Doubles</b> - like floating point numbers but with greater precision,
+        more accurate owing to more decimal places
+      </li>
+    </ul>
+    <p>
+      can use <code>typeof</code> method to check what type a variable is
+      holding
+    </p>
+    <h4>useful number methods</h4>
+    <small
+      ><i><b>NOTE:</b> there's more later to come</i></small
+    >
+    <p>
+      <code>toFixed()</code> rounds off to a fixed number of decimal places.
+    </p>
+    <h4>arithmetic operators</h4>
+    <p>
+      There's the common ones like <code>+</code>,
+      <code>-</code>,<code>*</code>, <code>/</code>
+    </p>
+    <p>then there's the not so common ones like:</p>
+    <ul>
+      <li>
+        <b>remainder (or modulo)</b> <code>%</code> - returns the remainder of
+        what's left after dividing a number <br />
+        e.g. <code>8 % 3 = 2</code>
+      </li>
+      <li>
+        <b>exponent</b> <code>**</code> - raises a base power to the exponent
+        power <br />.e.g. <code>5 ** 2 = 25</code>
+      </li>
+    </ul>
+    <h4>operator precedence</h4>
+    <p>
+      <code>
+        const num1 = 10;<br />
+        const num2 = 50;<br /> </code
+      ><br />
+      Simple test, what is <code>num2 + num1 / 8 + 2</code>
+    </p>
+    <p>
+      The browser will do "10 divided by 8 equals 1.25", then "50 plus 1.25 plus
+      2 equals 53.25". Some operators are applied before others — B O D M A S
+      rules basically ... which means brackets (or parenthesis) can be used to
+      override operator precedence. <br />e.g.
+      <code>(num2 + num1) / (8 + 2);</code>
+    </p>
+    <h4>increment and decrement operators</h4>
+    <p>
+      basically <code>--</code> or <code>++</code> are used to increase or
+      decrease a value <br />
+      for example: <br />
+      <code>let num1 = 6;<br />num1--;<br />console.log(num1);</code>
+    </p>
+
+    <h4>assignment operators</h4>
+    <p>
+      Operators that assign values to variables, for example <br />
+      <code>+=</code> adds values on left and right <br /><code>-=</code>
+      subtracts right value from left value <br />
+      <code>*=</code> multiplies left and right value <br />
+      <code>/=</code> divides left value by right value
+    </p>
+
+    <h4>comparison operators</h4>
+    <p><code>=== !== &lt; &gt; &lt;= &gt;= </code></p>
+  </body>
+</html>

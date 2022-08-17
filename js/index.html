@@ -1,104 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upskill: JavaScript</title>
+    <link rel="stylesheet" href="/style.css" async />
+    <script src="script.js" async></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Upskill: JavaScript</title>
-  <link rel="stylesheet" href="/style.css" async>
-  <script src="script.js" async></script>
-</head>
-
-<body class="darkmode">
-  <a href="/" title="go back">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-      stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-    </svg></a>
-  <h1>upskill : JavaScript</h1>
-  <h2>first steps - the guessing game</h2>
-  <strong>The assignment reads:</strong>
-  <blockquote>
-    I want you to create a simple guess the number type game. It should choose a random number between 1 and 100, then
-    challenge the player to guess the number in 10 turns. After each turn the player should be told if they are right or
-    wrong, and if they are wrong, whether the guess was too low or too high. It should also tell the player what numbers
-    they previously guessed. The game will end once the player guesses correctly, or once they run out of turns. When
-    the game ends, the player should be given an option to start playing again.
-  </blockquote>
-  <section class="game">
-    <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you
-      if
-      your guess was too high or too low.</p>
-
-    <div class="form">
-      <label for="guessField">Enter a guess: </label>
-      <input type="text" id="guessField" class="guessField">
-      <input type="submit" value="Submit guess" class="guessSubmit">
-    </div>
-
-    <div class="resultParas">
-      <p class="guesses"></p>
-      <p class="lastResult"></p>
-      <p class="lowOrHi"></p>
-    </div>
-  </section>
-  <p>This incorporates learning about:</p>
-  <ul>
-    <li>
-      <b>functions</b> — e.g. <code>checkGuess()</code>
-    </li>
-    <li>
-      <b>operators</b> — they allow us to perform tests, do math, join strings together, and other such things.
+  <body class="darkmode">
+    <a href="/" title="go back">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M10 19l-7-7m0 0l7-7m-7 7h18"
+        />
+      </svg>
+    </a>
+    <h1>upskill : JavaScript</h1>
+    <nav>
       <ul>
-        <li>
-          arithmetic operators — <code>+ - * /</code>
-        </li>
-        <li>
-          comparison operators — <code>=== != &lt; &gt; </code>
-        </li>
+        <li><a href="/js/index.html">js home</a></li>
+        <li><a href="/js/numbers.html">numbers</a></li>
       </ul>
-    </li>
-    <li>
-      <b>conditionals</b> — see the <code>checkGuess() { ... }</code> function in <code>script.js</code>.
-    </li>
-    <li>
-      <b>events</b> — would look something like <code>guessSubmit.addEventListener('click', checkGuess);</code>
-    </li>
-  </ul>
+    </nav>
+    <h2>first steps - the guessing game</h2>
+    <strong>The assignment reads:</strong>
+    <blockquote>
+      I want you to create a simple guess the number type game. It should choose
+      a random number between 1 and 100, then challenge the player to guess the
+      number in 10 turns. After each turn the player should be told if they are
+      right or wrong, and if they are wrong, whether the guess was too low or
+      too high. It should also tell the player what numbers they previously
+      guessed. The game will end once the player guesses correctly, or once they
+      run out of turns. When the game ends, the player should be given an option
+      to start playing again.
+    </blockquote>
+    <section class="game">
+      <p>
+        We have selected a random number between 1 and 100. See if you can guess
+        it in 10 turns or fewer. We'll tell you if your guess was too high or
+        too low.
+      </p>
 
-  <hr>
+      <div class="form">
+        <label for="guessField">Enter a guess: </label>
+        <input type="text" id="guessField" class="guessField" />
+        <input type="submit" value="Submit guess" class="guessSubmit" />
+      </div>
 
-  <h3>storing information - variables</h3>
-  <p>Using <code>var</code> had its advantages <i>e.g. variable hoisting - where variables can be initialised before
-      being declared</i>, but its disadvantages surpass those
-    suffered by <code>let</code> and <code>const</code>.</p>
-  <p>As a principle, use <code>const</code> when you can, and only use <code>let</code> when you have to.</p>
-  <h5>naming conventions</h5>
-  <ul>
-    <li>Always better to stick to <code>camelCase</code> </li>
-    <li>Don't use underscores before as a prefix - these are reserved for other JS functions</li>
-  </ul>
+      <div class="resultParas">
+        <p class="guesses"></p>
+        <p class="lastResult"></p>
+        <p class="lowOrHi"></p>
+      </div>
+    </section>
+    <p>This incorporates learning about:</p>
+    <ul>
+      <li><b>functions</b> — e.g. <code>checkGuess()</code></li>
+      <li>
+        <b>operators</b> — they allow us to perform tests, do math, join strings
+        together, and other such things.
+        <ul>
+          <li>arithmetic operators — <code>+ - * /</code></li>
+          <li>comparison operators — <code>=== != &lt; &gt; </code></li>
+        </ul>
+      </li>
+      <li>
+        <b>conditionals</b> — see the <code>checkGuess() { ... }</code> function
+        in <code>script.js</code>.
+      </li>
+      <li>
+        <b>events</b> — would look something like
+        <code>guessSubmit.addEventListener('click', checkGuess);</code>
+      </li>
+    </ul>
 
-  <h5>variable types</h5>
-  <p>
-    JavaScript is a "dynamically typed language", which means that, unlike some other languages, you don't need to
-    specify
-    what data type a variable will contain (numbers, strings, arrays, etc).
-  </p>
-  <p><strong>Arrays : </strong> an object with multiple values separated by commas. <a
-      href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays">More about arrays</a>
-  </p>
+    <small
+      >Finishing the game functionality
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash"
+        >https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash</a
+      >
+    </small>
 
-  <hr>
-
-  <h3>basic math in JavaScript</h3>
-
-
-  <h2>building blocks</h2>
-  <p>Ref <a
-      href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks">https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks</a>
-  </p>
-</body>
-
+    <h2>building blocks</h2>
+    <p>
+      Ref
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks"
+        >https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks</a
+      >
+    </p>
+  </body>
 </html>

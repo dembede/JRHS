@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap");
+
 * {
-  font-family: "Amazon Ember CD RC", "Sofia Pro", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
 }
 
@@ -37,7 +39,25 @@ h4 {
 }
 
 h5 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  color: chocolate;
+}
+nav ul {
+  padding: 0;
+}
+nav li {
+  display: inline-block;
+  list-style: circle;
+  margin-left: 10px;
+  text-transform: uppercase;
+}
+
+nav li a {
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  padding-bottom: 5px;
+  border-bottom: 1px solid;
 }
 
 p,
@@ -61,14 +81,15 @@ p.speech::first-letter {
   font-family: cursive;
 }
 
-input[type="submit"] {
-  text-transform: uppercase;
+ul li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6rem;
 }
 
-@namespace example url(http://127.0.0.1:5500/index.html);
-
-example|h5 {
-  color: blue;
+/* @namespace example url(http://127.0.0.1:5500/index.html); */
+i {
+  font-weight: normal;
+  font-family: inherit;
 }
 
 /** Dark Mode */
