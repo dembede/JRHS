@@ -4,3 +4,5 @@
 
 # dependencies
 /tdd/node_modules
+/nextjs/playground/node_modules
+/nextjs/playground-ts/node_modules
