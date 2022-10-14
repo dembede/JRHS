@@ -2,45 +2,59 @@
 
 import styles from "../../styles/Home.module.css";
 import Link from "next/link";
+import jsdom from "jsdom";
+import {
+  // fetchPost,
+  // fetchPosts,
+  getAllLocalArticleIds,
+  fetchLocalNewsArticle,
+} from "../../lib/posts";
 
-async function getAllPostIds() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const posts = await res.json();
-  // Get the paths we want to pre-render based on posts
-  const paths = posts.map((post) => ({
-    params: { id: post.id.toString() },
-  }));
-  return paths;
-}
+// export async function getStaticPaths() {
+//   // Call an external API endpoint to get posts
+//   const paths = await getAllPostIds();
+
+//   // We'll pre-render only these paths at build time.
+//   // { fallback: false } means other routes should 404.
+//   return { paths, fallback: false };
+// }
+
+// // This also gets called at build time
+// export async function getStaticProps({ params }) {
+//   const post = await fetchPost(params.id);
+//   return {
+//     props: {
+//       post,
+//     },
+//   };
+// }
 
 export async function getStaticPaths() {
-  // Call an external API endpoint to get posts
-  const paths = await getAllPostIds();
-
-  // We'll pre-render only these paths at build time.
-  // { fallback: false } means other routes should 404.
-  return { paths, fallback: false };
+  const paths = await getAllLocalArticleIds();
+  return {
+    paths,
+    fallback: false,
+  };
 }
 
-// This also gets called at build time
 export async function getStaticProps({ params }) {
-  // params contains post id
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${params.id}`
-  );
-  const post = await res.json();
+  const article = await fetchLocalNewsArticle(params.id);
   return {
     props: {
-      post,
+      article,
     },
   };
 }
 
-export default function Post({ post }) {
+export default function Post({ article }) {
+  const parser = new jsdom.DOMParser();
+  const body = parser.parseFromString(article.body, "text/html").body;
+  console.log(body);
+
   return (
     <div className={styles.container}>
-      <h1>{post.title}</h1>
-      <p>{post.body}</p>
+      <h1>{article.title}</h1>
+      {/* {body} */}
       <hr />
       <Link href="/blog"> « back to blog</Link> |
       <Link href="/"> « back home</Link>
