@@ -28,7 +28,8 @@ import LOCAL_NEWS_TEASERS from "../server/news-teasers.json";
 // }
 
 export async function getStaticProps() {
-  // await fetchNewsArticles();
+  const data = await fetchNewsArticles(); // not pulling data
+  // console.log("data", data);
   const posts = await fetchLocalNewsArticles();
   return {
     props: {
@@ -39,7 +40,7 @@ export async function getStaticProps() {
 
 export default function BlogSSR({ posts }) {
   // useEffect(() => {
-  //   fetchNewsArticles();
+  // fetchNewsArticles().then((data) => console.log(data));
   // }, []);
   return (
     <div className={styles.container}>

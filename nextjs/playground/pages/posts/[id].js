@@ -1,8 +1,9 @@
 /** Example from https://nextjs.org/docs/basic-features/pages */
-
+import React, { useEffect } from "react";
 import styles from "../../styles/Home.module.css";
 import Link from "next/link";
-// import jsdom from "jsdom";
+import Image from "next/image";
+
 import {
   // fetchPost,
   // fetchPosts,
@@ -47,20 +48,20 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Post({ article }) {
-  // const parser = new jsdom.DOMParser();
-  // const body = parser.parseFromString(article.body, "text/html").body;
-  // console.log(body);
-  console.log(article.body);
+  useEffect(() => {
+    const story = document.querySelector("[data=story]");
+    story.innerHTML = article.body;
+  }, []);
 
   return (
     <div className={styles.container}>
       <div className={styles.main}>
+        <Image src={article.photo} width="990px" height="680px" />
         <h1>{article.title}</h1>
-        {/* {body} */}
-        <p>{article.body}</p>
+        <div data="story"></div>
       </div>
       <hr />
-      <Link href="/blog"> « back to blog</Link> |
+      <Link href="/blog-ssr"> « back to blog</Link> |
       <Link href="/"> « back home</Link>
     </div>
   );

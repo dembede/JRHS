@@ -6,6 +6,8 @@ const NEWS_ARTICLES_ENDPOINT = "https://nation.africa/news-json-feed.json";
 import LOCAL_NEWS_ARTICLES from "../server/news.json";
 import LOCAL_NEWS_TEASERS from "../server/news-teasers.json";
 
+import escape from "escape-html";
+
 const fs = require("fs");
 
 export async function fetchPosts() {
@@ -42,8 +44,8 @@ export async function fetchNewsArticles() {
   const articles = await data.map((item) => newsArticleModel(item));
   const teasers = await data.map((item) => newsArticleTeaserModel(item));
 
-  const articlesStr = JSON.stringify(articles.slice(0, 2));
-  const teasersStr = JSON.stringify(teasers.slice(0, 2));
+  const articlesStr = JSON.stringify(articles.slice(0, 10));
+  const teasersStr = JSON.stringify(teasers.slice(0, 10));
 
   const articlePath = "./server/news.json";
   const teaserPath = "./server/news-teasers.json";
@@ -52,7 +54,7 @@ export async function fetchNewsArticles() {
   saveData(articlePath, articlesStr);
   saveData(teaserPath, teasersStr);
 
-  return teasers.slice(0, 50);
+  return teasers;
 }
 
 export async function fetchLocalNewsArticles() {
@@ -68,12 +70,14 @@ function newsArticleModel(data) {
   const date = data.articleDate;
   const articleDate = format(new Date(date), "dd MMM, yyyy");
   const arrTags = data.tags ? data.tags.split(",") : [];
+  const body = data.story;
+  // console.log("body", body);
 
   return {
     id: data.articleId,
     title: data.title,
     excerpt: data.description,
-    body: data.story,
+    body: body,
     link: data.link,
     slug: slugify(data.title),
     date: date,
