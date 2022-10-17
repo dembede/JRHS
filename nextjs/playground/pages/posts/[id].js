@@ -2,7 +2,7 @@
 
 import styles from "../../styles/Home.module.css";
 import Link from "next/link";
-import jsdom from "jsdom";
+// import jsdom from "jsdom";
 import {
   // fetchPost,
   // fetchPosts,
@@ -47,14 +47,18 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Post({ article }) {
-  const parser = new jsdom.DOMParser();
-  const body = parser.parseFromString(article.body, "text/html").body;
-  console.log(body);
+  // const parser = new jsdom.DOMParser();
+  // const body = parser.parseFromString(article.body, "text/html").body;
+  // console.log(body);
+  console.log(article.body);
 
   return (
     <div className={styles.container}>
-      <h1>{article.title}</h1>
-      {/* {body} */}
+      <div className={styles.main}>
+        <h1>{article.title}</h1>
+        {/* {body} */}
+        <p>{article.body}</p>
+      </div>
       <hr />
       <Link href="/blog"> « back to blog</Link> |
       <Link href="/"> « back home</Link>
