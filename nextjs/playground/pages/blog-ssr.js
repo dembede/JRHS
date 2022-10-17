@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 import CustomHead from "../components/customHead";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/future/image";
 import {
   fetchNewsArticles,
   fetchLocalNewsArticle,
@@ -39,9 +39,7 @@ export async function getStaticProps() {
 }
 
 export default function BlogSSR({ posts }) {
-  // useEffect(() => {
-  // fetchNewsArticles().then((data) => console.log(data));
-  // }, []);
+  const imageCSS = { maxWidth: "100%", height: "auto" };
   return (
     <div className={styles.container}>
       <CustomHead
@@ -61,9 +59,10 @@ export default function BlogSSR({ posts }) {
                   style={{
                     position: "relative",
                     width: "100%",
-                    height: "120px",
+                    height: "170px",
                     background: "#f7f7f7",
                     marginBottom: "10px",
+                    overflow: "hidden",
                   }}
                 >
                   {post.photo && (
@@ -73,7 +72,9 @@ export default function BlogSSR({ posts }) {
                       // width={300} // Desired size with correct aspect ratio
                       alt={post.caption}
                       title={post.caption}
-                      layout="fill"
+                      style={imageCSS}
+                      width={700}
+                      height={300}
                       // blurDataURL={post.photo}
                       // placeholder="blur" // Optional blur-up while loading
                     />

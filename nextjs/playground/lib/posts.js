@@ -6,8 +6,6 @@ const NEWS_ARTICLES_ENDPOINT = "https://nation.africa/news-json-feed.json";
 import LOCAL_NEWS_ARTICLES from "../server/news.json";
 import LOCAL_NEWS_TEASERS from "../server/news-teasers.json";
 
-import escape from "escape-html";
-
 const fs = require("fs");
 
 export async function fetchPosts() {
@@ -41,7 +39,10 @@ export async function fetchNewsArticles() {
   const res = await fetch(NEWS_ARTICLES_ENDPOINT);
   const data = await res.json();
 
-  const articles = await data.map((item) => newsArticleModel(item));
+  const articles = await data.map((item) => {
+    item.story = handleBodyImages(item.story);
+    return newsArticleModel(item);
+  });
   const teasers = await data.map((item) => newsArticleTeaserModel(item));
 
   const articlesStr = JSON.stringify(articles.slice(0, 10));
@@ -55,6 +56,14 @@ export async function fetchNewsArticles() {
   saveData(teaserPath, teasersStr);
 
   return teasers;
+}
+
+function handleBodyImages(body) {
+  console.log(body);
+  return body.replace(
+    '<img data-src="/resource',
+    '<img src="https://nation.africa/resource'
+  );
 }
 
 export async function fetchLocalNewsArticles() {
