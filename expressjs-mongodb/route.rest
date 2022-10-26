@@ -1,5 +1,31 @@
-GET http://127.0.0.1:3000/news
+GET http://localhost:3000/news
 
 ###
 
-GET http://127.0.0.1:3000/news/12
+GET http://localhost:3000/news/635704764d822acc8cfd6ad8
+
+###
+
+POST http://localhost:3000/news
+Content-Type: application/json
+
+{
+  "title": "Test article 05",
+  "excerpt": "At Umoja Estate in Nairobi, old second-hand fridges are on display, waiting for buyers",
+  "body": "At Umoja Estate in Nairobi, old second-hand fridges are on display, waiting for buyers. Some models are the latest in the market but some appear to belong to the era when only the elite imported fridges as other Kenyans preserved their food the traditional way.",
+  "date": "2022-10-18T17:52:20Z"
+}
+
+###
+
+DELETE http://localhost:3000/news/635703fd4d822acc8cfd6ad7
+
+###
+
+PATCH http://localhost:3000/news/635704764d822acc8cfd6ad8
+Content-Type: application/json
+
+{
+  "title": "Updated title",
+  "excerpt": "Updated excerpt"
+}

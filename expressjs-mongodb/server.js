@@ -2,6 +2,8 @@ require("dotenv").config(); //loads all environment variables from .env
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const cron = require("node-cron");
+const fetchNewsArticles = require("./lib/articles");
 
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
 const db = mongoose.connection;
@@ -20,3 +22,7 @@ const newsRouter = require("./routes/news");
 app.use("/news", newsRouter);
 
 app.listen(3000, () => console.log("server started"));
+
+cron.schedule("*/30 * * * *", () => {
+  fetchNewsArticles();
+});
